@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/venkatasai-kadamati/tally-cli/algo"
 )
 
 func main() {
@@ -12,8 +14,11 @@ func main() {
 	// syntax: func ReadFile(name string) ([]byte, error)
 	// since its exposed the func name would be starting with caps
 
-	data, err := os.ReadFile("documents/words.txt")
+	data, _ := os.ReadFile("documents/words.txt")
 	// data is slice of bytes, we need to type cast into ASCII string
-	fmt.Println("data", string(data)) // in a slice of bytes
-	fmt.Println(err)                  // if its nil, no errors, read is done
+
+	// call algorithm for counting words
+	totalCount := algo.CountWords(string(data))
+	fmt.Println("total count of words:", totalCount)
+
 }
