@@ -41,3 +41,7 @@ func CountWords(data string) int {
 }
 
 // notes: we can use empty char (runes : utf-8)
+// introducing new cases to test behaviour in code is called as regression.
+// to control regressions, we use automated testing
+// we have 3 famous automated tests: Unit, E2E, Integrated
+// best split of above is 70:20:10 (unit, integrated, e2e)
